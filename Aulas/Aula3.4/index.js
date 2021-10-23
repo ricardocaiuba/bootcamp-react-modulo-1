@@ -44,7 +44,7 @@ const carModelAll = {
           currentModelIndex = 0;
         }
         // Verifica se já navegou em todas as marcas
-        if (!(currentBrandIndex < models.length)) {
+        if (!(currentBrandIndex < brands.length)) {
           return {
             value: undefined,
             done: true,
