@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aula 1.4 Eventos do teclado - Combinação de teclas</title>
+  </head>
+  <body>
+    <p>pressione d e a juntos</p>
+  </body>
+  <script>
+    function runDoubleKeys(func, ...codes) {
+      let pressed = new Set();
+
+      document.addEventListener("keydown", (e) => {
+        pressed.add(e.code);
+
+        console.log(e.code);
+        for (let iterator of codes) {
+          if (!pressed.has(iterator)) {
+            return;
+          }
+          pressed.clear();
+          func();
+        }
+      });
+
+      document.addEventListener("keyup", (e) => {
+        pressed.delete(e.code);
+      });
+    }
+
+    runDoubleKeys(() => alert("Combinação de duas teclas"), "KeyA", "KeyD");
+  </script>
+</html>

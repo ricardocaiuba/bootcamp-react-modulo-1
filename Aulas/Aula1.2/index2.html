@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 1.2 UIEvent Risize</title>
+  </head>
+  <body onload="checkCookies();">
+    <p>Exemplo para redimensionamento de janela</p>
+    <p>Redimensionou a página: <span id="teste">0</span> vezes.</p>
+    <script>
+      window.addEventListener("resize", countResize);
+
+      let count = 0;
+
+      function countResize() {
+        let textElement = (count += 1);
+        document.getElementById("teste").innerHTML = textElement;
+      }
+    </script>
+  </body>
+</html>
